@@ -34,4 +34,11 @@ public class ItemEstoque {
 	public void setRoupa(Roupa roupa) {
 		this.roupa = roupa;
 	}
+
+	@Override
+	public String toString() {
+		return "ItemEstoque [quantidade=" + quantidade + ", roupa=" + roupa + "]";
+	}
+	
+	
 }

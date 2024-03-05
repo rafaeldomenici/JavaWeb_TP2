@@ -1,15 +1,22 @@
 package br.edu.infnet.rafaeldomenici;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.rafaeldomenici.model.domain.Roupa;
+import br.edu.infnet.rafaeldomenici.model.service.RoupaService;
+
 
 
 
 @Component
 public class RoupaLoader implements ApplicationRunner{
+	
+	@Autowired 
+	RoupaService roupaService;
+	
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -39,6 +46,21 @@ public class RoupaLoader implements ApplicationRunner{
 				roupa3.setValor(170);
 				roupa3.setGenero("Roupa Feminina");
 				System.out.println(roupa3+" Valor com desconto: "+roupa3.valorComDesconto()+"\n");
+				
+				roupaService.incluir(roupa1);
+				
+				roupaService.incluir(roupa2);
+				
+				roupaService.excluir(1);
+				
+				System.out.println(roupaService.obter(2));
+				
+				roupaService.incluir(roupa3);
+				
+				System.out.println(roupaService.obterLista());
+				
+				System.out.println("");
+				
 		
 	}
 

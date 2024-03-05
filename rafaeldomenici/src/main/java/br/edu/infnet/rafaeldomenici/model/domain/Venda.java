@@ -58,6 +58,15 @@ public class Venda {
 	public void adicionarRoupa(Roupa roupa) {
 		this.listaRoupas.add(roupa);
 	}
+
+
+	@Override
+	public String toString() {
+		return "Venda [codVenda=" + codVenda + ", formaPagamento=" + formaPagamento + ", listaRoupas=" + listaRoupas
+				+ "]";
+	}
+	
+	
 	
 }
 
